@@ -29,3 +29,11 @@ jobs:
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
+          
+      - name: Generate SBOM
+        # You may pin to the exact commit or the version.
+        # uses: advanced-security/generate-sbom-action@ded26bf491ccc4b8c43f6c7ac2e1ff35e960c0d0
+        uses: advanced-security/generate-sbom-action@v1
+        with:
+          # GitHub token with permissions to read SBOM
+          token:  ${{ github.token }}
